@@ -1,0 +1,15 @@
+# https://kubernetes.io/docs/concepts/services-networking/service/
+apiVersion: v1
+kind: Service
+metadata:
+  name: api-service
+spec:
+  selector:
+    app: synergychat-api
+  ports:
+  - name: api-service
+    nodePort: 30080
+    protocol: TCP
+    port: 80
+    targetPort: 8080
+
